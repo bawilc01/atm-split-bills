@@ -29,6 +29,7 @@ bills_selected_eq_total - boolean
 #TODO how to tie this to user input
 
 import pytest
+import flake8
 
 @pytest.fixture
 def example_100_wd():

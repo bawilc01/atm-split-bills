@@ -1,5 +1,5 @@
 pytest
-logging
 pandas
 numpy
+flake8
 Flask
