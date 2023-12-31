@@ -27,6 +27,7 @@ bills_selected_eq_total - boolean
 '''
 
 import pytest
+
 @pytest.fixture
 def example_100_wd():
     return 100
@@ -55,5 +56,18 @@ def test_hundred_div_fifty(example_100_wd):
 def test_hundred_mod_fifty(example_100_wd):
     assert example_100_wd % 50 == 0
 
+# When user specifies 5 - 20 dollar bill to withdraw, then 100/20 = 5
+def test_hundred_div_twenty(example_100_wd):
+    assert example_100_wd//20 == 5
 
-# App limits no other bill type to withdrawal
+# When user specifies 5 - 20 dollar bill to withdraw, then 100 mod 20 = 0, no bills left to select
+def test_hundred_mod_twenty(example_100_wd):
+    assert example_100_wd % 20 == 0
+
+# When user specifies 10 - 10 dollar bill to withdraw, then 100/10 = 10
+def test_hundred_div_ten(example_100_wd):
+    assert example_100_wd//20 == 5
+
+# When user specifies 5 - 20 dollar bill to withdraw, then 100 mod 10 = 0, no bills left to select
+def test_hundred_mod_ten(example_100_wd):
+    assert example_100_wd % 10 == 0
