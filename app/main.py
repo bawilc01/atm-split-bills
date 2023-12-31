@@ -49,8 +49,9 @@ Withdrawal is complete.
 #signature functions
 
 def enter_wd_amt(withdrawal_amount):
-    # prompt("How much would you like to withdrawal?")
-    pass
+    prompt("How much would you like to withdraw? ")
+    return int(withdrawal_amount)
+
 
 def select_bills(withdrawal_amount, bill_type):
     pass
