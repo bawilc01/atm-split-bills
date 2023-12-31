@@ -1,14 +1,19 @@
 '''
 Problem:
-When users withdraw from an atm, they can typically only withdraw in multiples of 20.
+When users withdraw from an atm, they can typically only
+withdraw in multiples of 20.
 
 Solution:
-After specifying an amount to withdraw, users can withdraw in multiples of 1, 5, 10, 20, 50, 100.
+After specifying an amount to withdraw,
+users can withdraw in multiples of 1, 5, 10, 20, 50, 100.
 Users can select to withdraw in any combination of bills.
-Users must withdraw the amount of bills that equals the amount withdrawn or cancel the withdrawal.
+Users must withdraw the amount of bills
+that equals the amount withdrawn or cancel the withdrawal.
 The amount of bills left will show on screen.
-Bills that cannot be used will be disabled. For example, if withdrawing $100, and only 1 - $20 bill is selected, the option for
-withdrawing a $100 is disabled because there is only $80 in bills left.
+Bills that cannot be used will be disabled.
+For example, if withdrawing $100, and only 1 - $20 bill is selected,
+the option for withdrawing a $100 is disabled
+because there is only $80 in bills left.
 
 Inputs:
 withdrawal_amount
@@ -43,18 +48,20 @@ Withdrawal is complete.
 #     print_hi('PyCharm')
 #
 # # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-import flake8
 
-#TODO some class to create
+# TODO some class to create
 
-#signature functions
+# signature functions
 
 def enter_wd_amt(withdrawal_amount):
-    confirm_withdraw = f"How would you like to receive your ${withdrawal_amount}?"
+    confirm_withdraw = f"How would you like to receive your " \
+                       f"${withdrawal_amount}?"
     return confirm_withdraw
 
-def select_bills(withdrawal_amount, bill_type):
+
+def select_bills(withdrawal_amount, bill_select):
     pass
+
 
 def calculate_amount():
     pass
