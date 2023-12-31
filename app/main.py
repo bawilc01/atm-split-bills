@@ -1,7 +1,16 @@
-# This is a sample Python script.
+'''
+Problem:
+When users withdraw from an atm, they can typically only withdraw in multiples of 20.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+Solution:
+After specifying an amount to withdraw, users can withdraw in multiples of 1, 5, 10, 20, 50, 100.
+Users can select to withdraw in any combination of bills.
+Users must withdraw the amount of bills that equals the amount withdrawn or cancel the withdrawal.
+The amount of bills left will show on screen.
+Bills that cannot be used will be disabled. For example, if withdrawing $100, and only 1 - $20 bill is selected, the option for
+withdrawing a $100 is disabled because there is only $80 in bills left.
+
+'''
 
 
 def print_hi(name):
