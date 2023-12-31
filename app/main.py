@@ -49,7 +49,8 @@ Withdrawal is complete.
 #signature functions
 
 def enter_wd_amt(withdrawal_amount):
-    pass
+    confirm_withdraw = f"How would you like to receive your ${withdrawal_amount}?"
+    return confirm_withdraw
 
 def select_bills(withdrawal_amount, bill_type):
     pass
@@ -58,4 +59,6 @@ def calculate_amount():
     pass
 
 
-
+wd_input_amt = int(input("How much would you like to withdraw? "))
+return_msg = enter_wd_amt(wd_input_amt)
+print(return_msg)
