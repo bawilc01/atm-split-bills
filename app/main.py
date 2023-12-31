@@ -22,6 +22,14 @@ bills_unavailable
 bills_selected
 bills_selected_eq_total - boolean
 
+Plan:
+
+User is asked how much for withdrawal.
+User enters an integer number.
+User selects bill types until total is met.
+User confirms bill types and total.
+Withdrawal is complete.
+
 '''
 
 
@@ -40,8 +48,8 @@ bills_selected_eq_total - boolean
 
 #signature functions
 
-def enter_wd_amt():
-    pass
+def enter_wd_amt(withdrawal_amount):
+    prompt("How much would you like to withdrawal?")
 
 def select_bills():
     pass
