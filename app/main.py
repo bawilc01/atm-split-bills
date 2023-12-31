@@ -22,7 +22,7 @@ bills_unavailable
 bills_selected
 bills_selected_eq_total - boolean
 
-Plan:
+MVP Plan 1:
 
 User is asked how much for withdrawal.
 User enters an integer number.
@@ -49,9 +49,10 @@ Withdrawal is complete.
 #signature functions
 
 def enter_wd_amt(withdrawal_amount):
-    prompt("How much would you like to withdrawal?")
+    # prompt("How much would you like to withdrawal?")
+    pass
 
-def select_bills():
+def select_bills(withdrawal_amount, bill_type):
     pass
 
 def calculate_amount():
