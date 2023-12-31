@@ -1,1 +1,4 @@
 *.idea
+atmvenv/*
+__about__.py
+__init__.py
