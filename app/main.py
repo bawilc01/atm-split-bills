@@ -10,16 +10,44 @@ The amount of bills left will show on screen.
 Bills that cannot be used will be disabled. For example, if withdrawing $100, and only 1 - $20 bill is selected, the option for
 withdrawing a $100 is disabled because there is only $80 in bills left.
 
+Inputs:
+withdrawal_amount
+bill_type
+bill_select
+bill_deselect
+
+Outputs:
+bills_remaining
+bills_unavailable
+bills_selected
+bills_selected_eq_total - boolean
+
 '''
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# def print_hi(name):
+#     # Use a breakpoint in the code line below to debug your script.
+#     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+#
+#
+# # Press the green button in the gutter to run the script.
+# if __name__ == '__main__':
+#     print_hi('PyCharm')
+#
+# # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+#TODO some class to create
+
+#signature functions
+
+def enter_wd_amt():
+    pass
+
+def select_bills():
+    pass
+
+def calculate_amount():
+    pass
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
