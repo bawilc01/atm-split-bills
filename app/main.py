@@ -36,30 +36,36 @@ User confirms bill types and total.
 Withdrawal is complete.
 
 """
-
-
-def deposit(starting_balance, amount):
-    balance = starting_balance + amount
-    return balance
-
-
-def withdraw(balance, amount):
-    withdrawal = int(input("Enter amount to withdraw: "))
-    try:
-        balance = balance - withdrawal
-    except balance <= 0.00:
-        raise ValueError('Transaction declined. '
-                         'Insufficient funds. Deposit some money first.')
-    else:
-        return amount
-
+import script
 
 class BankAccount:
-    # signature functions
-
-    starting_balance = 0.00  # USD
+    starting_balance = 0.00
 
     def __init__(self, first_name, last_name, balance):
+        self.balance = balance
         self.first_name = first_name
         self.last_name = last_name
-        self.balance = balance
+
+    def deposit(self):
+        amount = int(input("Enter amount to deposit: "))
+        starting_balance = self.balance + amount
+        return starting_balance
+
+    def withdraw(self):
+        withdrawal = int(input("Enter amount to withdraw: "))
+        if (self.balance - withdrawal) <= 0:
+            raise ValueError(f'Transaction for ${withdrawal} declined. Insufficient funds. Deposit some money first.')
+        else:
+            return withdrawal, self.balance - withdrawal
+    def bill_select_wd(self):
+        pass
+
+def main():
+    selection = int(input("Enter 1 for withdrawal, 2 for deposit, 3 to exit: "))
+    if selection == 1:
+        BankAccount.deposit()
+    elif selection == 2:
+        BankAccount.withdraw()
+    else:
+        print("Transaction cancelled. Have a great day!")
+        exit()
