@@ -38,25 +38,28 @@ Withdrawal is complete.
 """
 
 
+def deposit(starting_balance, amount):
+    balance = starting_balance + amount
+    return balance
+
+
+def withdraw(balance, amount):
+    withdrawal = int(input("Enter amount to withdraw: "))
+    try:
+        balance = balance - withdrawal
+    except balance <= 0.00:
+        raise ValueError('Transaction declined. '
+                         'Insufficient funds. Deposit some money first.')
+    else:
+        return amount
+
+
 class BankAccount:
     # signature functions
 
     starting_balance = 0.00  # USD
 
-    def __init__(self, first_name, last_name):
+    def __init__(self, first_name, last_name, balance):
         self.first_name = first_name
         self.last_name = last_name
-
-    def deposit(self, starting_balance, amount):
-        balance = starting_balance + amount
-        return balance
-
-    def withdraw(self, balance, amount):
-        withdrawal = int(input("Enter amount to withdraw: "))
-        try:
-            balance = balance - withdrawal
-        except balance <= 0.00:
-            raise ValueError('Transaction declined. '
-                             'Insufficient funds. Deposit some money first.')
-        else:
-            return amount
+        self.balance = balance
