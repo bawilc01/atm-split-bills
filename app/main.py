@@ -49,24 +49,46 @@ Withdrawal is complete.
 #
 # # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
-# TODO some class to create
+class BankAccount:
 
-# signature functions
+    # signature functions
 
-def enter_wd_amt(withdrawal_amount):
-    confirm_withdraw = f"How would you like to receive your " \
-                       f"${withdrawal_amount}?"
-    return confirm_withdraw
+    starting_balance = 0.00  # USD
 
 
-def select_bills(withdrawal_amount, bill_select):
-    pass
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
 
 
-def calculate_amount():
-    pass
+    def deposit(self, starting_balance, amount):
+        balance = starting_balance + amount
+        return balance
+
+
+    def withdraw(self, balance, amount):
+        try:
+            balance = balance - amount
+        except balance <= 0.00:
+            raise ValueError('Transaction declined. Insufficient funds. Deposit some money first.')
+            withdraw(self, balance, amount)
+        else:
+            return balance
+
+    def select_bills(withdrawal_amount, bill_amount):
+
+        # prompt user to select bills for withdrawal
+        # set while loop for withdrawal to not be complete until bill amount = withdrawal amount
+        # prevent user from selecting bills making amount to withdraw greater than initial withdrawal amount
+        # implement back button to change withdrawal amount
+        # implement cancel to cancel transaction
+        bill_amount = [1, 5, 10, 20, 50, 100]
+        pass
+
+
+
 
 
 wd_input_amt = int(input("How much would you like to withdraw? "))
-return_msg = enter_wd_amt(wd_input_amt)
+return_msg = withdrawal(wd_input_amt)
 print(return_msg)
