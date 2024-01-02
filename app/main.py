@@ -36,36 +36,95 @@ User confirms bill types and total.
 Withdrawal is complete.
 
 """
+import random
+import sys
 
+class BankAccount():
 
-class BankAccount:
-    starting_balance = 0.00
+    def __init__(self, balance=0.00):
+        self.balance = balance  # USD
 
-    def __init__(self, first_name, last_name, balance):
-        self.balance = balance
-        self.first_name = first_name
-        self.last_name = last_name
+    def deposit(self, amount):
+        self.amount = amount
+        self.balance = self.balance + self.amount
+        print("Current account balance: Nu.", self.balance)
+        print()
 
-    def deposit(self):
-        amount = int(input("Enter amount to deposit: "))
-        starting_balance = self.balance + amount
-        return starting_balance
-
-    def withdraw(self):
-        withdrawal = int(input("Enter amount to withdraw: "))
-        if (self.balance - withdrawal) <= 0:
-            raise ValueError(f'Transaction for ${withdrawal} declined. Insufficient funds. Deposit some money first.')
+    def withdraw(self, amount):
+        self.amount = amount
+        if self.amount > self.balance:
+            print("Insufficient fund!")
+            print(f"Your balance is Nu.{self.balance} only.")
+            print("Try with lesser amount than balance.")
+            print()
         else:
-            return withdrawal, self.balance - withdrawal
+            self.balance = self.balance - self.amount
+            print(f"Nu.{amount} withdrawal successful!")
+            print("Current account balance: Nu.", self.balance)
+            print()
+
+    def check_balance(self):
+        print("Available balance: Nu.", self.balance)
+        print()
+
+    def transaction(self):
+        print("""
+            TRANSACTION 
+        *********************
+            Menu:
+            1. Check Balance
+            2. Deposit
+            3. Withdraw
+            4. Exit
+        *********************
+        """)
+        while True:
+            try:
+                option = int(input("Enter 1, 2, 3, or 4: "))
+            except:
+                print("Error: Enter 1, 2, 3, or 4 only! \n")
+                continue
+            else:
+                if option == 1:
+                    atm.check_balance()
+                elif option == 2:
+                    amount = int(input("How much you want to deposit(Nu.): "))
+                    atm.deposit(amount)
+                elif option == 3:
+                    amount = int(input("How much you want to withdraw(Nu.): "))
+                    atm.withdraw(amount)
+                elif option == 4:
+                    print(f"""
+                       printing receipt..............
+                 ******************************************
+                     Transaction is now complete.                                      
+                     Available balance: Nu.{self.balance}                    
+
+                     Thanks for choosing us as your bank                  
+                 ******************************************
+                 """)
+                    sys.exit()
+
     def bill_select_wd(self):
         pass
 
-def main():
-    selection = int(input("Enter 1 for withdrawal, 2 for deposit, 3 to exit: "))
-    if selection == 1:
-        BankAccount.deposit()
-    elif selection == 2:
-        BankAccount.withdraw()
+
+atm = BankAccount()
+
+while True:
+    trans = input("Do you want to do any transaction?(y/n): ")
+    if trans == "y":
+        atm.transaction()
+    elif trans == "n":
+        print("""
+    -------------------------------------
+   | Thanks for choosing us as your bank |
+   | Visit us again!                     |
+    -------------------------------------
+        """)
+        break
     else:
-        print("Transaction cancelled. Have a great day!")
-        exit()
+        print("Wrong command!  Enter 'y' for yes and 'n' for NO.\n")
+
+
+
