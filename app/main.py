@@ -36,8 +36,8 @@ User confirms bill types and total.
 Withdrawal is complete.
 
 """
-import random
 import sys
+
 
 class BankAccount():
 
@@ -81,7 +81,8 @@ class BankAccount():
         while True:
             try:
                 option = int(input("Enter 1, 2, 3, or 4: "))
-            except:
+            except Exception as e:
+                print(e)
                 print("Error: Enter 1, 2, 3, or 4 only! \n")
                 continue
             else:
@@ -125,6 +126,3 @@ while True:
         break
     else:
         print("Wrong command!  Enter 'y' for yes and 'n' for NO.\n")
-
-
-
