@@ -36,7 +36,7 @@ User confirms bill types and total.
 Withdrawal is complete.
 
 """
-import script
+
 
 class BankAccount:
     starting_balance = 0.00
