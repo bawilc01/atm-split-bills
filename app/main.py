@@ -68,7 +68,7 @@ class BankAccount():
         print()
 
     def transaction(self):
-        print("""
+        menu = """
             TRANSACTION 
         *********************
             Menu:
@@ -77,7 +77,9 @@ class BankAccount():
             3. Withdraw
             4. Exit
         *********************
-        """)
+        """
+        trimmed_menu = menu.strip()
+        print(trimmed_menu)
         while True:
             try:
                 option = int(input("Enter 1, 2, 3, or 4: "))
@@ -95,7 +97,7 @@ class BankAccount():
                     amount = int(input("How much you want to withdraw(Nu.): "))
                     atm.withdraw(amount)
                 elif option == 4:
-                    print(f"""
+                    receipt = f"""
                        printing receipt..............
                  ******************************************
                      Transaction is now complete.                                      
@@ -103,7 +105,9 @@ class BankAccount():
 
                      Thanks for choosing us as your bank                  
                  ******************************************
-                 """)
+                 """
+                    trimmed_receipt = receipt.strip()
+                    print(trimmed_receipt)
                     sys.exit()
 
     def bill_select_wd(self):
@@ -117,12 +121,14 @@ while True:
     if trans == "y":
         atm.transaction()
     elif trans == "n":
-        print("""
+        exit_message = """
     -------------------------------------
    | Thanks for choosing us as your bank |
    | Visit us again!                     |
     -------------------------------------
-        """)
+        """
+        trimmed_exit_message = exit_message.strip()
+        print(trimmed_exit_message)
         break
     else:
         print("Wrong command!  Enter 'y' for yes and 'n' for NO.\n")
